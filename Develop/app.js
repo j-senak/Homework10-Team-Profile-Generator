@@ -12,7 +12,10 @@ const render = require("./lib/htmlRenderer");
 
 inquirer.prompt ([
     {
-        type
+        type: "checkbox",
+        name: "jobTitle",
+        message: "What is your job position?",
+        choices: [Manager, Engineer, Intern]
     }
 ]);
 
