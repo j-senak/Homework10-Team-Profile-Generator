@@ -17,7 +17,18 @@ inquirer.prompt ([
         message: "What is your job position?",
         choices: [Manager, Engineer, Intern]
     }
-]);
+]).then(function(res){
+    var job = res.jobTitle;
+    if (job === "Manager") {
+        addManager();
+    }
+    if (job === "Engineer") {
+        addEngineer();
+    }
+    if (job === "Intern") {
+        addIntern();
+    }
+})
 
 
 
