@@ -9,6 +9,48 @@ const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 ​
 const render = require("./lib/htmlRenderer");
+
+inquirer.prompt ([
+    {
+        type
+    }
+]);
+
+
+
+/*
+prompt.list(role: Intern or Manager or Employee).done(function(res){
+    var role = res.role;
+
+    if(role==="manager"){
+        addManager();
+    }
+    if (role==="intern"){
+        addIntern()
+    }
+})
+
+function addManager(){
+    inquirer.prompt(
+        name:
+        id:
+        emailId:
+        Office Address:
+    )
+}
+
+function addIntern(){
+    inquirer.prompt(
+        name:
+        id:
+        emailId:
+        School:
+    )
+}
+
+
+*/
+
 ​
 ​
 // Write code to use inquirer to gather information about the development team members,
