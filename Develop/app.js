@@ -5,7 +5,7 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 ​
-const OUTPUT_DIR = path.resolve(__dirname, "output")
+const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 ​
 const render = require("./lib/htmlRenderer");
@@ -17,7 +17,7 @@ inquirer.prompt ([
         message: "What is your job position?",
         choices: [Manager, Engineer, Intern]
     }
-]).then(function(res){
+]).then(function(res) {
     var job = res.jobTitle;
     if (job === "Manager") {
         addManager();
@@ -28,7 +28,83 @@ inquirer.prompt ([
     if (job === "Intern") {
         addIntern();
     }
-})
+});
+
+function addManager() {
+    inquirer.prompt ([
+        {
+            type: "input",
+            name: "managerName",
+            message: "What is your full name?"
+        },
+        {
+           type: "input",
+           name: "managerIdNumber",
+            message: "What is your id number?"
+        },
+        {
+            type: "input",
+            name: "managerEmail",
+            message: "What is your email address?"
+        },
+        {
+            type: "input",
+            name: "managerOfficeNumber",
+            message: "What is your office number?"
+        }
+    ])
+};
+
+function addIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "internName",
+            message: "What is your full name"
+        },
+        {
+            type: "input",
+            name: "internId",
+            message: "What is your id number?"
+        },
+        {
+            type: "input",
+            name: "internEmail",
+            message: "What is your email address?" 
+        },
+        {
+            type: "input",
+            name: "internSchool",
+            message: "What school did you graduate from?"
+        }
+    ])
+};
+
+function addEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "engineerName",
+            message: "What is your full name"
+        },
+        {
+            type: "input",
+            name: "engineerId",
+            message: "What is your id number?"
+        },
+        {
+            type: "input",
+            name: "engineerEmail",
+            message: "What is your email address?" 
+        },
+        {
+            type: "input",
+            name: "engineerGithub",
+            message: "What is your Github username?"
+        }
+    ])
+};
+
 
 
 
